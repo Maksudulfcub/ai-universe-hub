@@ -48,33 +48,33 @@ const viewDetails = (dataById) => {
     const modalContainer = document.getElementById('modal-container');
     const viewDetailsModal = document.getElementById('view-details');
     viewDetailsModal.innerHTML = `
-           <div class="space-y-5">
-                            <h3 class="font-semibold text-xl">Descriptions</h3>
-                            <div class="flex gap-5 justify-around">
-                                <h4 class="font-semibold text-green-500 p-5 bg-gray-200 rounded-lg">Basic</h4>
-                                <h4 class="font-semibold text-orange-400 p-5 bg-gray-200 rounded-lg">Pro</h4>
-                                <h4 class="font-semibold text-red-500 p-5 bg-gray-200 rounded-lg">Enterprise</h4>
+           <div class="space-y-5 w-1/3">
+                            <h3 class="font-semibold text-lg">${dataById.description}</h3>
+                            <div class="flex flex-col gap-5 justify-around">
+                                <h4 class="font-semibold text-green-500 p-5 bg-gray-200 rounded-lg text-center">${dataById.pricing[0].price} <br/> Basic</h4>
+                                <h4 class="font-semibold text-orange-400 p-5 bg-gray-200 rounded-lg">${dataById.pricing[1].price} <br/> Pro</h4>
+                                <h4 class="font-semibold text-red-500 p-5 bg-gray-200 rounded-lg">${dataById.pricing[2].price} <br/> Enterprise</h4>
                             </div>
                             <div class="flex gap-5 justify-around">
                                 <div>
                                     <h2 class="card-title">Features</h2>
-                                    <p class="text-gray-400 text-xs">Features</p>
-                                    <p class="text-gray-400 text-xs">Features</p>
-                                    <p class="text-gray-400 text-xs">Features</p>
+                                    <p class="text-gray-400 text-xs">${dataById.features[1].feature_name}</p>
+                                    <p class="text-gray-400 text-xs">${dataById.features[2].feature_name}</p>
+                                    <p class="text-gray-400 text-xs">${dataById.features[3].feature_name}</p>
                                 </div>
                                 <div>
-                                    <h2 class="card-title">Features</h2>
-                                    <p class="text-gray-400 text-xs">Features</p>
-                                    <p class="text-gray-400 text-xs">Features</p>
-                                    <p class="text-gray-400 text-xs">Features</p>
+                                    <h2 class="card-title">Integrations</h2>
+                                    <p class="text-gray-400 text-xs">${dataById.integrations[0]}</p>
+                                    <p class="text-gray-400 text-xs">${dataById.integrations[1]}</p>
+                                    <p class="text-gray-400 text-xs">${dataById.integrations[2]}</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div>
-                            <img src="" alt="">
-                            <h2 class="card-title mt-10">Features</h2>
-                            <p class="text-gray-400 text-xs">Features</p>
+                        <div class="w-1/2">
+                            <img src="${dataById.image_link[0]}" alt="">
+                            <h2 class="card-title mt-10">${dataById.input_output_examples[0].input}</h2>
+                            <p class="text-gray-400 text-xs">${dataById.input_output_examples[0].output}</p>
                         </div>
     `;
     modalContainer.appendChild(viewDetailsModal);
